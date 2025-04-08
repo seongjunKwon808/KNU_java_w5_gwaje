@@ -1,0 +1,120 @@
+import java.util.Scanner;
+
+/* 아이스크림,커피,음료를 파는 자판기 프로그램
+ * 연속적인 거래가 가능함
+ * 여러개의 메소드로 구현함
+ * */
+
+public class VendingMachine3 {
+    public static void main(String[] args) { //알아보기 쉽도록 서술
+        Scanner input = new Scanner(System.in);
+        boolean end = false;
+        System.out.print("아이스크림, 커피, 음료를 파는 자판기입니다.");
+        System.out.print("\n");
+        while (!end) {
+            printMenu();
+            int n = input.nextInt();
+            if (n == 1) { //if문 내부를 함수1
+                int m;
+                do {
+                    printIcecreamMenu();
+                    m = input.nextInt(); // 번호에 따라 다르게 부여한다는게 잘 나타나려나
+                    if (m == 0) {
+                        break;
+                    } else if (m >= 1 && m <= 4) { // loop inside while expression
+                        System.out.printf(" %d 선택, 감사합니다.", m);
+                        System.out.print("\n");
+                        break; // break -> out inside while
+
+                    } else {
+
+                    }
+                } while (true); //Infinite loop unless break is executed
+
+
+            } else if (n == 2) {//내부를 함수2
+                do {
+                    printCofeeMenu();
+                    int l = input.nextInt();
+                    if (l == 0) {
+                        break;
+                    } else if (l >= 1 && l <= 3) {
+                        System.out.printf(" %d 선택, 감사합니다.", l);
+                        System.out.print("\n");
+                        break;
+                    } else {
+
+                    }
+                } while (true);
+
+            } else if (n == 3) { //함수3
+                do {
+                    printDrinkMenu();
+                    int k = input.nextInt();
+                    if (k == 0) {
+                        break;
+                    } else if (k >= 1 && k <= 4) {
+                        System.out.printf(" %d 선택, 감사합니다.", k);
+                        System.out.print("\n");
+                        break;
+                    } else {
+
+                    }
+                } while (true);
+
+            }//else 는 당연히 4를 의미하겠지? 아 nested if로 4랑 나머지 구별해야지
+            else { //함수4
+                if (n == 4) {
+                    System.out.print("감사합니다. 거래를 종료합니다.");
+                    break;
+                }
+                System.out.print("올바르지 않은 번호입니다.");
+                System.out.print("\n");
+
+            }
+        }
+    }
+
+    public static void printMenu() {
+        System.out.print("\n어떤 종류를 원하십니까?");
+        System.out.print("\n아이스크림: 1");
+        System.out.print("\n커피: 2");
+        System.out.print("\n음료: 3");
+        System.out.print("\n종료: 4");
+        System.out.print("\n번호 선택: \n");
+    }
+
+
+    public static void printIcecreamMenu() {
+        System.out.print("무엇을 드시겠습니까?");
+        System.out.print("\n바닐라 아이스크림(1000원): 1");
+        System.out.print("\n아몬드 아이스크림(1400원): 2");
+        System.out.print("\n딸기 아이스크림(1400원): 3");
+        System.out.print("\n호두 아이스크림(1400원): 4");
+        System.out.print("\n처음으로 가기: 0");
+        System.out.print("\n번호 선택:");
+
+    }
+
+    public static void printCofeeMenu() { //매개변수 선언은 안에서 따로 하기 아 굳이 리턴을 줄 필요가 없네!
+
+        System.out.print("무엇을 드시겠습니까?");
+        System.out.print("\n아메리칸(1000원): 1");
+        System.out.print("\n카페라떼(1400원): 2");
+        System.out.print("\n에스프레소(1400원): 3");
+        System.out.print("\n처음으로 가기: 0");
+        System.out.print("\n번호 선택:");
+
+    }
+
+    public static void printDrinkMenu() {
+        System.out.print("무엇을 드시겠습니까?");
+        System.out.print("\n생수(1000원): 1");
+        System.out.print("\n오렌지쥬스(1400원): 2");
+        System.out.print("\n망고쥬스(1400원): 3");
+        System.out.print("\n우유(1400원): 4");
+        System.out.print("\n처음으로 가기: 0");
+        System.out.print("\n번호 선택:");
+    }
+}
+
