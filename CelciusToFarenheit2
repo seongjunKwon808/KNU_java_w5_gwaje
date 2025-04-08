@@ -1,0 +1,17 @@
+public class CelciusToFarenheit2 {
+    public static void main(String [] args){
+
+        for (int i = -40; i <= 100;i = i + 5){
+            double f = convert(i);
+
+            System.out.printf("C = %d --> %f",i,f);
+            System.out.print("\n");
+        }
+
+    }
+    public static double convert(double c){
+        double f = c * 9.0 / 5.0 + 32.0;
+
+        return f;
+    }
+}
