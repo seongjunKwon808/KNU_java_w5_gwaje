@@ -1,0 +1,81 @@
+import java.util.Scanner; //문제 1번 VendingMachin1 입니다
+
+/*
+* 커피,아이스크림,음료 자판기 프로그램
+* 연속적인 거래가 가능하다.
+* 메뉴를 보여주는 기능만 구현함.
+* 돈 계산 기능은 아직 없음.
+* main 메소드 하나로 구현함.
+*
+* @author 권성준
+* */
+
+
+public class VendingMachine {
+    public static void main(String [] args){
+        Scanner input = new Scanner(System.in);
+        boolean end = false;
+        System.out.print("아이스크림, 커피, 음료를 파는 자판기입니다.");
+        System.out.print("\n");
+        while (!end){
+
+            System.out.print("\n어떤 종류를 원하십니까?");
+            System.out.print("\n아이스크림: 1");
+            System.out.print("\n커피: 2");
+            System.out.print("\n음료: 3");
+            System.out.print("\n종료: 4");
+            System.out.print("\n번호 선택: \n");
+            int n = input.nextInt();
+             // if로 메뉴선택 선택했음 continue로 되돌아오자.
+            if (n == 1){
+                System.out.print("무엇을 드시겠습니까?");
+                System.out.print("\n바닐라 아이스크림(1000원): 1");
+                System.out.print("\n아몬드 아이스크림(1400원): 2");
+                System.out.print("\n딸기 아이스크림(1400원): 3");
+                System.out.print("\n호두 아이스크림(1400원): 4");
+                System.out.print("\n처음으로 가기: 0");
+                System.out.print("\n번호 선택:");
+                int s = input.nextInt();
+                System.out.printf(" %d 선택, 감사합니다.", s);
+                if (s == 0) {
+                    continue;
+                } else if (s >= 5) {
+                }
+                    System.out.print("\n");
+                    continue;
+            } else if (n == 2) {
+                System.out.print("무엇을 드시겠습니까?");
+                System.out.print("\n아메리칸(1000원): 1");
+                System.out.print("\n카페라떼(1400원): 2");
+                System.out.print("\n에스프레소(1400원): 3");
+                System.out.print("\n번호 선택:");
+                int e = input.nextInt();
+                System.out.printf(" %d 선택, 감사합니다.",e);
+                System.out.print("\n");
+                continue;
+            } else if (n == 3) {
+                System.out.print("무엇을 드시겠습니까?");
+                System.out.print("\n생수(1000원): 1");
+                System.out.print("\n오렌지쥬스(1400원): 2");
+                System.out.print("\n망고쥬스(1400원): 3");
+                System.out.print("\n우유(1400원): 4");
+                System.out.print("\n번호 선택:");
+                int l = input.nextInt();
+                System.out.printf(" %d 선택, 감사합니다.",l);
+                System.out.print("\n");
+                continue;
+            }//else는 당연히 4를 의미하겠지? 아 nested if로 4랑 나머지 구별해야지
+            else {
+                if (n == 4){
+                    System.out.print("감사합니다. 거래를 종료합니다.");
+                    break;
+                }
+                System.out.print("올바르지 않은 번호입니다.");
+                System.out.print("\n");
+                continue;
+            }
+        }
+    }
+}
+
+
