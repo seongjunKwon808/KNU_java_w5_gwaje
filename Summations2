@@ -1,0 +1,22 @@
+public class Summations2 {
+
+/* 10부터 20까지,20부터 30까지...90부터 100까지 이렇게 11개씩 자연수를 더해나가는 프로그램입니다!
+*
+*  */
+
+    public static void main(String [] args){
+        for(int i=10;i<100;i=i+10){
+            int j = i+10;
+            System.out.printf("%d부터 %d까지의 자연수의 합 = ",i,j);
+            int total = sum(i,j);
+            System.out.print(total+"\n");
+        }
+
+
+    }
+
+    public static int sum (int j,int k){
+        int sumResult = 11*(j + k)/2; //등차수열의 합 공식 이용 항수/2 * (첫째항+마지막항)
+        return sumResult;
+    }
+}
